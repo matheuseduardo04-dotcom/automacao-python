@@ -1,30 +1,62 @@
+<p align="center">
+  <img src="./assets/banner.svg" alt="Banner do projeto de automacao de cadastro de produtos" width="100%" />
+</p>
+
 # Automacao de Cadastro de Produtos com Python
 
-Projeto de automacao desktop com Python para acessar uma pagina web, realizar login automaticamente e cadastrar produtos em lote a partir de uma planilha `.csv`.
+<p align="center">
+  <img src="https://img.shields.io/badge/status-pronto%20para%20portfolio-0F172A?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/automacao-desktop-16A34A?style=for-the-badge" alt="Automacao Desktop" />
+  <img src="https://img.shields.io/badge/dados-csv-0284C7?style=for-the-badge" alt="CSV" />
+  <img src="https://img.shields.io/badge/seguranca-.env-F59E0B?style=for-the-badge" alt="Seguranca" />
+</p>
 
-## Visao geral
+<p align="center">
+  Projeto de automacao desktop com Python para acessar uma pagina web, fazer login automaticamente e cadastrar produtos em lote a partir de uma planilha CSV.
+</p>
 
-Este projeto foi criado para automatizar um fluxo repetitivo de cadastro de produtos usando:
+## Stack utilizada
 
-- `PyAutoGUI` para controlar mouse e teclado
-- `pandas` para ler a base de dados
-- `python-dotenv` para proteger credenciais e configuracoes locais
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
+  <img src="https://img.shields.io/badge/PyAutoGUI-2C3E50?style=for-the-badge&logo=python&logoColor=white" alt="PyAutoGUI" />
+  <img src="https://img.shields.io/badge/python--dotenv-ECD53F?style=for-the-badge&logo=dotenv&logoColor=black" alt="python-dotenv" />
+  <img src="https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Google Chrome" />
+  <img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS" />
+</p>
 
-O script abre o Google Chrome no macOS, acessa a pagina de login, entra no sistema e preenche o formulario de cadastro com os dados de `produtos.csv`.
+## O que este projeto faz
 
-## Funcionalidades
+- Abre o Google Chrome automaticamente no macOS
+- Acessa a tela de login do sistema
+- Le email e senha a partir do arquivo `.env`
+- Importa a base de produtos com `pandas`
+- Preenche o formulario item por item com `PyAutoGUI`
+- Mantem credenciais fora do GitHub
 
-- Login automatizado no sistema
-- Leitura de produtos em lote via CSV
-- Preenchimento automatico do formulario
-- Suporte a observacoes opcionais
-- Configuracao de coordenadas via `.env`
-- Estrutura pronta para publicar no GitHub sem expor senha
+## Fluxo da automacao
+
+<p align="center">
+  <img src="./assets/workflow.svg" alt="Fluxo da automacao" width="100%" />
+</p>
+
+## Destaques do repositorio
+
+- `codigo.py`: script principal da automacao
+- `pegar_posicao.py`: captura coordenadas da tela para ajustar cliques
+- `tabela.py`: validacao rapida da estrutura do CSV
+- `produtos.csv`: base de exemplo para o cadastro em lote
+- `.env.example`: modelo de configuracao local
+- `requirements.txt`: dependencias do projeto
 
 ## Estrutura do projeto
 
 ```text
 .
+├── assets/
+│   ├── banner.svg
+│   └── workflow.svg
 ├── codigo.py
 ├── pegar_posicao.py
 ├── produtos.csv
@@ -33,13 +65,6 @@ O script abre o Google Chrome no macOS, acessa a pagina de login, entra no siste
 ├── .env.example
 └── README.md
 ```
-
-## Tecnologias
-
-- Python 3
-- PyAutoGUI
-- pandas
-- python-dotenv
 
 ## Como executar
 
@@ -71,7 +96,7 @@ Crie o arquivo `.env` com base no exemplo:
 cp .env.example .env
 ```
 
-Depois edite o `.env` com:
+Preencha com seus dados e, se necessario, ajuste as coordenadas:
 
 ```env
 AUTOMACAO_EMAIL=seu_email@exemplo.com
@@ -85,54 +110,51 @@ CAMPO_FORM_Y=290
 SCROLL_APOS_CADASTRO=5000
 ```
 
-## Como descobrir as coordenadas da tela
-
-Use o arquivo `pegar_posicao.py` para capturar a posicao do mouse:
+### 5. Descubra as coordenadas da tela
 
 ```bash
 python3 pegar_posicao.py
 ```
 
-Voce tera alguns segundos para posicionar o mouse sobre o elemento desejado. O script imprimira as coordenadas no terminal.
+Depois de executar, posicione o mouse sobre os elementos desejados e use as coordenadas exibidas no terminal para atualizar o `.env`.
 
-## Como rodar a automacao
+### 6. Rode a automacao
 
 ```bash
 python3 codigo.py
 ```
 
-## Formato do arquivo CSV
+## Formato do CSV
 
-O arquivo `produtos.csv` deve conter as seguintes colunas:
+O arquivo `produtos.csv` deve conter estas colunas:
 
 ```text
 codigo | marca | tipo | categoria | preco_unitario | custo | obs
 ```
 
-Exemplo:
+Exemplo de linhas:
 
-```csv
-codigo,marca,tipo,categoria,preco_unitario,custo,obs
-MOLO000251,Logitech,Mouse,1,25.95,6.50,
-CAHA000252,Hashtag,Camisa,2,25.00,11.00,Conferir estoque
+```text
+MOLO000251    Logitech    Mouse    1    25.95    6.50
+CAHA000252    Hashtag     Camisa   2    25.00    11.00    Conferir estoque
 ```
 
-Observacao: o arquivo atual do projeto esta separado por tabulacao, e o script ja trata isso com `sep="\t"`.
+Observacao: a base atual usa tabulacao como separador, e o script ja faz a leitura com `sep="\t"`.
 
 ## Cuidados importantes
 
-- Este projeto depende de coordenadas da tela, entao pequenas mudancas na resolucao ou no zoom podem exigir ajuste.
-- Evite usar o computador durante a execucao da automacao.
-- O script foi preparado para macOS por usar `open -a 'Google Chrome'`.
-- O arquivo `.env` esta no `.gitignore`, entao suas credenciais nao serao enviadas ao GitHub.
+- O projeto depende de coordenadas da tela e pode exigir ajuste conforme resolucao, escala e zoom.
+- Evite mover mouse e teclado durante a automacao.
+- O fluxo atual foi preparado para macOS por usar `open -a 'Google Chrome'`.
+- O arquivo `.env` esta no `.gitignore`, entao suas credenciais nao vao para o GitHub.
 
-## Proximos passos para evoluir o projeto
+## Proximas melhorias
 
-- Trocar coordenadas fixas por reconhecimento de imagem
-- Adicionar logs de execucao
+- Substituir coordenadas fixas por reconhecimento de imagem
+- Adicionar logs por etapa
 - Validar dados antes do envio
-- Criar tratamento de erros por etapa
+- Criar tratamento de erros com mensagens mais claras
 
 ## Autor
 
-Desenvolvido por Matheus, com foco em automacao de tarefas repetitivas usando Python.
+Desenvolvido por Matheus com foco em automacao de tarefas repetitivas usando Python.

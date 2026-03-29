@@ -1,0 +1,92 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="0.55" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0B1120"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="173" y1="87" x2="1008" y2="358" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22C55E"/>
+      <stop offset="0.5" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="420" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="25" flood-color="#020617" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="420" rx="28" fill="url(#bg)"/>
+  <circle cx="1050" cy="72" r="150" fill="#0EA5E9" opacity="0.16"/>
+  <circle cx="950" cy="330" r="210" fill="#22C55E" opacity="0.12"/>
+  <circle cx="160" cy="330" r="180" fill="#F59E0B" opacity="0.1"/>
+
+  <g opacity="0.18">
+    <path d="M0 330C151 288 227 261 352 281C507 307 584 399 760 392C938 384 1025 244 1200 220" stroke="url(#accent)" stroke-width="3"/>
+    <path d="M0 292C151 250 227 223 352 243C507 269 584 361 760 354C938 346 1025 206 1200 182" stroke="url(#accent)" stroke-width="3"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="60" y="56" width="670" height="308" rx="28" fill="#0B1220" fill-opacity="0.92" stroke="#1E293B"/>
+    <rect x="780" y="74" width="160" height="104" rx="20" fill="url(#card)" stroke="#23324A"/>
+    <rect x="960" y="124" width="170" height="114" rx="22" fill="url(#card)" stroke="#23324A"/>
+    <rect x="820" y="214" width="210" height="120" rx="24" fill="url(#card)" stroke="#23324A"/>
+  </g>
+
+  <rect x="96" y="92" width="162" height="34" rx="17" fill="#0F1B2E" stroke="#22314D"/>
+  <text x="115" y="114" fill="#93C5FD" font-size="16" font-family="Arial, Helvetica, sans-serif" font-weight="700">PYTHON + PYAUTOGUI</text>
+
+  <text x="95" y="176" fill="white" font-size="50" font-family="Arial, Helvetica, sans-serif" font-weight="800">Automacao de Cadastro</text>
+  <text x="95" y="226" fill="white" font-size="50" font-family="Arial, Helvetica, sans-serif" font-weight="800">de Produtos</text>
+  <text x="95" y="270" fill="#CBD5E1" font-size="24" font-family="Arial, Helvetica, sans-serif">
+    Login automatico, leitura de CSV e preenchimento em lote
+  </text>
+  <text x="95" y="304" fill="#94A3B8" font-size="21" font-family="Arial, Helvetica, sans-serif">
+    Projeto pronto para portfolio, GitHub e evolucoes futuras
+  </text>
+
+  <g>
+    <rect x="96" y="326" width="172" height="22" rx="11" fill="#162033"/>
+    <rect x="274" y="326" width="128" height="22" rx="11" fill="#162033"/>
+    <rect x="408" y="326" width="144" height="22" rx="11" fill="#162033"/>
+    <circle cx="110" cy="337" r="5" fill="#22C55E"/>
+    <circle cx="288" cy="337" r="5" fill="#38BDF8"/>
+    <circle cx="422" cy="337" r="5" fill="#F59E0B"/>
+    <text x="124" y="342" fill="#E2E8F0" font-size="14" font-family="Arial, Helvetica, sans-serif" font-weight="700">Chrome</text>
+    <text x="302" y="342" fill="#E2E8F0" font-size="14" font-family="Arial, Helvetica, sans-serif" font-weight="700">CSV</text>
+    <text x="436" y="342" fill="#E2E8F0" font-size="14" font-family="Arial, Helvetica, sans-serif" font-weight="700">Automacao Desktop</text>
+  </g>
+
+  <g>
+    <rect x="806" y="96" width="106" height="18" rx="9" fill="#0F172A"/>
+    <rect x="806" y="126" width="82" height="12" rx="6" fill="#1E293B"/>
+    <rect x="806" y="146" width="108" height="12" rx="6" fill="#1E293B"/>
+    <circle cx="896" cy="126" r="26" fill="#22C55E" opacity="0.18"/>
+    <path d="M885 126L893 134L909 118" stroke="#4ADE80" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="806" y="111" fill="#E2E8F0" font-size="14" font-family="Arial, Helvetica, sans-serif" font-weight="700">Login concluido</text>
+  </g>
+
+  <g>
+    <rect x="985" y="146" width="122" height="18" rx="9" fill="#0F172A"/>
+    <rect x="985" y="178" width="118" height="12" rx="6" fill="#1E293B"/>
+    <rect x="985" y="198" width="92" height="12" rx="6" fill="#1E293B"/>
+    <rect x="985" y="218" width="104" height="12" rx="6" fill="#1E293B"/>
+    <text x="985" y="161" fill="#E2E8F0" font-size="14" font-family="Arial, Helvetica, sans-serif" font-weight="700">Base carregada</text>
+    <rect x="1078" y="173" width="24" height="57" rx="12" fill="#0F172A" stroke="#334155"/>
+    <rect x="1082" y="181" width="16" height="18" rx="8" fill="#38BDF8"/>
+  </g>
+
+  <g>
+    <rect x="846" y="238" width="160" height="18" rx="9" fill="#0F172A"/>
+    <rect x="846" y="271" width="68" height="12" rx="6" fill="#1E293B"/>
+    <rect x="922" y="271" width="84" height="12" rx="6" fill="#1E293B"/>
+    <rect x="846" y="292" width="160" height="12" rx="6" fill="#1E293B"/>
+    <rect x="846" y="313" width="118" height="12" rx="6" fill="#1E293B"/>
+    <circle cx="988" cy="247" r="24" fill="#F59E0B" opacity="0.18"/>
+    <text x="846" y="253" fill="#E2E8F0" font-size="14" font-family="Arial, Helvetica, sans-serif" font-weight="700">Cadastro em lote</text>
+    <text x="979" y="252" fill="#FBBF24" font-size="20" font-family="Arial, Helvetica, sans-serif" font-weight="700">+</text>
+  </g>
+</svg>
