@@ -1,106 +1,82 @@
-import os
-import time
-from pathlib import Path
+# Passo 1: Entrar no sistema da empresa
+# https://dlp.hashtagtreinamentos.com/python/intensivao/login
 
-import pandas as pd
 import pyautogui
-from dotenv import load_dotenv
-
-load_dotenv()
-
-LOGIN_URL = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"
-CSV_PATH = Path(__file__).with_name("produtos.csv")
-
-EMAIL = os.getenv("AUTOMACAO_EMAIL")
-PASSWORD = os.getenv("AUTOMACAO_SENHA")
-
-CAMPO_EMAIL_X = int(os.getenv("CAMPO_EMAIL_X", "564"))
-CAMPO_EMAIL_Y = int(os.getenv("CAMPO_EMAIL_Y", "401"))
-BOTAO_LOGIN_X = int(os.getenv("BOTAO_LOGIN_X", "727"))
-BOTAO_LOGIN_Y = int(os.getenv("BOTAO_LOGIN_Y", "568"))
-CAMPO_FORM_X = int(os.getenv("CAMPO_FORM_X", "534"))
-CAMPO_FORM_Y = int(os.getenv("CAMPO_FORM_Y", "290"))
-SCROLL_APOS_CADASTRO = int(os.getenv("SCROLL_APOS_CADASTRO", "5000"))
+import time
+import os
+import pandas as pd
 
 pyautogui.PAUSE = 0.5
-pyautogui.FAILSAFE = True
+
+# ----------------------------
+# PASSO 1 - Abrir Chrome no Mac
+# ----------------------------
+os.system("open -a 'Google Chrome'")
+time.sleep(3)
+
+# Ir para barra de endereço
+pyautogui.hotkey("Cmd")
+
+# Digitar o link
+pyautogui.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login", interval=0.05)
+pyautogui.press("enter")
+time.sleep(0.5)
+
+# ----------------------------
+# PASSO 2 - Fazer login
+# ----------------------------
+
+# Clicar no campo de email (AJUSTAR COORDENADA SE PRECISAR)
+pyautogui.click(x=564, y=401)
+
+pyautogui.write("matheuseduard_04@gmail.com")
+pyautogui.press("tab")
+pyautogui.write("sua_senha_aqui")
+
+# Clicar no botão login (AJUSTAR SE PRECISAR)
+pyautogui.click(x=727, y=568)
+
+time.sleep(3)
+
+# ----------------------------
+# PASSO 3 - Importar base
+# ----------------------------
+
+tabela = pd.read_csv("produtos.csv", sep="\t")
 
 
-def validar_configuracao():
-    variaveis_obrigatorias = {
-        "AUTOMACAO_EMAIL": EMAIL,
-        "AUTOMACAO_SENHA": PASSWORD,
-    }
+# ----------------------------
+# PASSO 4 - Cadastrar produtos
+# ----------------------------
 
-    faltando = [nome for nome, valor in variaveis_obrigatorias.items() if not valor]
-    if faltando:
-        raise ValueError(
-            "Defina as variaveis "
-            f"{', '.join(faltando)} no arquivo .env antes de executar o script."
-        )
+for linha in tabela.index:
 
+    pyautogui.click(x=534, y=290)
 
-def abrir_chrome_e_acessar_sistema():
-    os.system("open -a 'Google Chrome'")
-    time.sleep(3)
-
-    pyautogui.hotkey("command", "l")
-    pyautogui.write(LOGIN_URL, interval=0.05)
-    pyautogui.press("enter")
-    time.sleep(2)
-
-
-def fazer_login():
-    pyautogui.click(x=CAMPO_EMAIL_X, y=CAMPO_EMAIL_Y)
-    pyautogui.write(EMAIL)
+    codigo = tabela.loc[linha, "codigo"]
+    pyautogui.write(str(codigo))
     pyautogui.press("tab")
-    pyautogui.write(PASSWORD)
-    pyautogui.click(x=BOTAO_LOGIN_X, y=BOTAO_LOGIN_Y)
-    time.sleep(3)
 
+    pyautogui.write(str(tabela.loc[linha, "marca"]))
+    pyautogui.press("tab")
 
-def carregar_produtos():
-    return pd.read_csv(CSV_PATH, sep="\t")
+    pyautogui.write(str(tabela.loc[linha, "tipo"]))
+    pyautogui.press("tab")
 
+    pyautogui.write(str(tabela.loc[linha, "categoria"]))
+    pyautogui.press("tab")
 
-def cadastrar_produtos(tabela):
-    for linha in tabela.index:
-        pyautogui.click(x=CAMPO_FORM_X, y=CAMPO_FORM_Y)
+    pyautogui.write(str(tabela.loc[linha, "preco_unitario"]))
+    pyautogui.press("tab")
 
-        pyautogui.write(str(tabela.loc[linha, "codigo"]))
-        pyautogui.press("tab")
+    pyautogui.write(str(tabela.loc[linha, "custo"]))
+    pyautogui.press("tab")
 
-        pyautogui.write(str(tabela.loc[linha, "marca"]))
-        pyautogui.press("tab")
+    obs = tabela.loc[linha, "obs"]
+    if not pd.isna(obs):
+        pyautogui.write(str(obs))
 
-        pyautogui.write(str(tabela.loc[linha, "tipo"]))
-        pyautogui.press("tab")
+    pyautogui.press("tab")
+    pyautogui.press("enter")
 
-        pyautogui.write(str(tabela.loc[linha, "categoria"]))
-        pyautogui.press("tab")
-
-        pyautogui.write(str(tabela.loc[linha, "preco_unitario"]))
-        pyautogui.press("tab")
-
-        pyautogui.write(str(tabela.loc[linha, "custo"]))
-        pyautogui.press("tab")
-
-        observacao = tabela.loc[linha, "obs"]
-        if pd.notna(observacao):
-            pyautogui.write(str(observacao))
-
-        pyautogui.press("tab")
-        pyautogui.press("enter")
-        pyautogui.scroll(SCROLL_APOS_CADASTRO)
-
-
-def main():
-    validar_configuracao()
-    tabela = carregar_produtos()
-    abrir_chrome_e_acessar_sistema()
-    fazer_login()
-    cadastrar_produtos(tabela)
-
-
-if __name__ == "__main__":
-    main()
+    pyautogui.scroll(5000)
