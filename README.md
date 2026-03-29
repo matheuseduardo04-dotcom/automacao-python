@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="Banner do projeto de automacao de cadastro de produtos" width="100%" />
+  <img src="./assets/banner.svg" alt="Banner do projeto de automação de cadastro de produtos" width="100%" />
 </p>
 
 # Automação de Cadastro de Produtos com Python
