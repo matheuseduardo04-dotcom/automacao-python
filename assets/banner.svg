@@ -39,7 +39,7 @@
   <rect x="96" y="92" width="162" height="34" rx="17" fill="#0F1B2E" stroke="#22314D"/>
   <text x="115" y="114" fill="#93C5FD" font-size="16" font-family="Arial, Helvetica, sans-serif" font-weight="700">PYTHON + PYAUTOGUI</text>
 
-  <text x="95" y="176" fill="white" font-size="50" font-family="Arial, Helvetica, sans-serif" font-weight="800">Automacao de Cadastro</text>
+  <text x="95" y="176" fill="white" font-size="50" font-family="Arial, Helvetica, sans-serif" font-weight="800">Automação de Cadastro</text>
   <text x="95" y="226" fill="white" font-size="50" font-family="Arial, Helvetica, sans-serif" font-weight="800">de Produtos</text>
   <text x="95" y="270" fill="#CBD5E1" font-size="24" font-family="Arial, Helvetica, sans-serif">
     Login automatico, leitura de CSV e preenchimento em lote
