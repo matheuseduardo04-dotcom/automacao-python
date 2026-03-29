@@ -2,7 +2,7 @@
   <img src="./assets/banner.svg" alt="Banner do projeto de automacao de cadastro de produtos" width="100%" />
 </p>
 
-# Automacao de Cadastro de Produtos com Python
+# Automação de Cadastro de Produtos com Python
 
 <p align="center">
   <img src="https://img.shields.io/badge/status-pronto%20para%20portfolio-0F172A?style=for-the-badge" alt="Status" />
@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  Projeto de automacao desktop com Python para acessar uma pagina web, fazer login automaticamente e cadastrar produtos em lote a partir de uma planilha CSV.
+  Projeto de automação desktop com Python para acessar uma pagina web, fazer login automaticamente e cadastrar produtos em lote a partir de uma planilha CSV.
 </p>
 
 ## Stack utilizada
