@@ -44,7 +44,7 @@
   <g>
     <circle cx="683" cy="100" r="22" fill="#FEF3C7"/>
     <text x="675" y="107" fill="#D97706" font-size="18" font-family="Arial, Helvetica, sans-serif" font-weight="800">3</text>
-    <text x="681" y="139" fill="#0F172A" font-size="22" font-family="Arial, Helvetica, sans-serif" font-weight="800">Le o CSV</text>
+    <text x="681" y="139" fill="#0F172A" font-size="22" font-family="Arial, Helvetica, sans-serif" font-weight="800">Lê o CSV</text>
     <text x="681" y="172" fill="#475569" font-size="16" font-family="Arial, Helvetica, sans-serif">Importa a planilha de</text>
     <text x="681" y="194" fill="#475569" font-size="16" font-family="Arial, Helvetica, sans-serif">produtos com pandas</text>
   </g>
