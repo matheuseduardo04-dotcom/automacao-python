@@ -1,0 +1,3 @@
+pandas
+PyAutoGUI
+python-dotenv
